@@ -1,8 +1,7 @@
 import os
 from celery import Celery
-R_HOST = os.getenv('REDIS_HOST')
-R_PORT =  os.getenv('REDIS_PORT')
-redis_url = f'redis://{R_HOST}:{R_PORT}/0'
+
+redis_url = f'{os.getenv("REDIS_URL")}/0'
 
 celery_app = Celery(
     'worker',
